@@ -1,69 +1,147 @@
-## 📄 Research Publication
+# 📬 Newsletter Management System
 
-This project is based on a published research paper:
+A full-stack **Newsletter Management System** with a role-based workflow for article submission, review, approval, and newsletter generation.
 
-**"Automated Pneumonia Detection using VGG19: A Deep Learning Approach for Chest X-Ray Analysis"**
+The system integrates **AI-powered article generation using Ollama (Mistral)** and follows a clean, scalable architecture.
 
-📅 Published in: International Conference on Advance IT, Engineering and Management (2024)
+---
 
-📌 Key Contributions:
-- Built and evaluated 3 deep learning models
-- Achieved ~96% training accuracy
-- Used transfer learning with VGG19
-- Applied data augmentation & preprocessing techniques
+## 🚀 Features
 
-## 🏅 Publication Certificate
+- 🔐 Role-based access control (Admin, Approver, User)
+- 📝 Article submission system
+- ✅ Article approval workflow
+- 🧩 Drag-and-drop newsletter builder
+- 📄 Newsletter PDF generation
+- 🤖 AI article generation (Ollama - Mistral)
+- 🖼 Media upload support
 
-This project is backed by a published research paper and certified contribution.
+---
 
-<img width="800" height="559" alt="image" src="https://github.com/user-attachments/assets/6a1704e0-3ee2-4905-994f-d065d62ef2dc" />
+## 🏗 System Architecture
+User Browser
+│
+▼
+React Frontend (Tailwind CSS)
+│
+▼
+Express.js API (REST Layer)
+│
+├── Authentication (JWT + Role-Based Access)
+├── Business Logic (Controllers & Services)
+├── File Storage (Uploads)
+├── MySQL Database
+└── Ollama AI (Mistral via API)
 
 
-## 🏗️ Architecture
+---
 
-User → Flask Web App → Image Processing → VGG19 Model → Prediction Output
+## 🧠 Architecture Overview
+
+- **Frontend (React + Tailwind)**  
+  Handles UI and API communication.
+
+- **Backend (Node.js + Express)**  
+  Manages APIs, authentication, and business logic.
+
+- **Authentication**  
+  JWT-based authentication with role-based access control.
+
+- **Database (MySQL)**  
+  Stores users, articles, workflows, and newsletters.
+
+- **File Storage**  
+  Handles media uploads and static files.
+
+- **AI Integration (Ollama - Mistral)**  
+  Generates article content via backend API calls.
+
+---
+
+## ⚙️ Workflow
+
+### 👤 User
+- Submit articles  
+- Upload media  
+- Track article status  
+
+### 🧑‍💼 Approver
+- Review articles  
+- Approve / Reject / Return with comments  
+
+### 🧑‍💻 Admin
+- Manage articles  
+- Select approved articles  
+- Arrange layout (drag-and-drop)  
+- Generate PDF newsletters  
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend**
+- React.js
+- Tailwind CSS
+- Axios
+
+**Backend**
+- Node.js
+- Express.js
+
+**Database**
+- MySQL
+
+**AI**
+- Ollama (Mistral)
 
 ---
 
 ## 📂 Project Structure
-
-```
-PNEUMONIA_DETECTION/
+newsletter-management-system/
 │
-├── app/                 # Flask application
-│   ├── static/          # CSS, JS files
-│   ├── templates/       # HTML pages
-│   ├── uploads/         # Uploaded images
-│   └── app.py           # Main Flask app
+├── backend/
+│ ├── config/
+│ ├── middleware/
+│ ├── models/
+│ ├── controllers/
+│ ├── routes/
+│ ├── services/
+│ ├── uploads/
+│ └── server.js
 │
-├── notebook/            # Jupyter notebook (model training)
-├── research/            # Research paper
-├── training.py          # Model training script
-├── README.md
-```
+├── frontend/
+│ ├── src/
+│ ├── components/
+│ ├── pages/
+│
+├── .gitignore
+├── package.json
+└── README.md
+
 
 ---
 
-## 🛠️ Tech Stack
+## 🔐 Security
 
-* Python
-* TensorFlow / Keras
-* OpenCV
-* Flask
-* NumPy, Pandas
+- JWT Authentication  
+- Role-based authorization  
+- Protected API routes  
 
 ---
 
-## 🔄 How it Works
+## 🤖 AI Integration
 
-1. User uploads X-ray image
-2. Image is preprocessed (resize, normalize)
-3. Model predicts class (Normal / Pneumonia)
-4. Result displayed on UI
+- Uses **Ollama (Mistral model)**  
+- Generates article drafts based on prompts  
+- Helps users create content faster  
 
 ---
 
-## 🚀 Future Improvements
+## 🚀 Future Enhancements
 
-* Improve model accuracy with larger dataset
-* Add multi-class disease detection
+- Email newsletter distribution  
+- Cloud storage (AWS / Azure)  
+- Real-time notifications  
+- Analytics dashboard  
+
+---
